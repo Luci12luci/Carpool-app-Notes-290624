@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pridaj cestu</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
+</head>
+<body>
+    <h1>Pridaj cestu:</h1>
+    <form method="POST" action="{{ url_for('create_ad') }}">
+        <input type="text" id="from" name="from_location" placeholder="From">
+        <input type="text" id="to" name="to_location" placeholder="To">
+        <input type="date" id="date" name="date" placeholder="Date">
+        <input type="text" name="notes" rows="4" placeholder="Notes">
+        <button type="submit">Add Trip</button>
+    </form>
+</body>
+</html>

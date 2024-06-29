@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
+    <title>Vyhladaj cestu</title>
+</head>
+<body>
+    <h1>Vyhladaj cestu:</h1>
+    <form method="POST" action="/search">
+        <input type="text" name="from_location" placeholder="Z miesta">
+        <input type="text" name="to_location" placeholder="Do miesta">
+        <button type="submit">Vyhľadať cestu</button>
+    </form>
+
+        <h2>Dostupné cesty:</h2>
+<ul>
+        {% for ride in rides %}
+            <li>
+                {{ ride.from_location }} - {{ ride.to_location }} ({{ ride.date }})
+                <button class="register-button">Register</button>
+            </li>
+        {% endfor %}
+    </ul>
+
+    </body>
+</html>
